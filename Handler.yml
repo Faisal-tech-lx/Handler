@@ -1,6 +1,6 @@
 ---
 - name: Run Play 
-  hosts: Test
+  hosts: webGroup
   become: true
   tasks:
   - name: Copy Content
