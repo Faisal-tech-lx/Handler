@@ -3,3 +3,13 @@
   hosts: Test
   become: true
   tasks:
+  - name: Copy Content
+      content: 'Hello Faisal'
+      dest: /tmp/logs
+    notify: restart_data
+
+  handlers:
+  - name: restart_data
+    service:
+      name: sshd
+      state: restarted
